@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package login;
+
+option go_package = "login/loginpb";
+option java_multiple_files = true;
+option java_package = "login";
+
+message LoginRequest {
+    string username = 1;
+    int32 password=2;
+}
+
+message LoginResponse {
+    string result =1;
+}
+
+service LoginService {
+    rpc Login(LoginRequest) returns(LoginResponse){};
+}
